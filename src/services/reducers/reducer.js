@@ -4,13 +4,14 @@ const initialState = {
     cardData: []
 }
 
-export default function reducerItem(state= initialState, actions){
-    switch (actions.type) {
+export default function cartItem(state= [], action){
+    switch (action.type) {
         case Const.ADD_TO_CART:
-            return {
+            console.log('Reducer: ', action)
+            return [ 
                 ...state,
-                cardData: actions.data
-            }
+               { cardData: action.data}
+            ]
             
             break;
     

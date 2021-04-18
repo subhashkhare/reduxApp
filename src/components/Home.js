@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Home = () => {
+const Home = props => {
+
+    console.log('Home: ', props.data.length)
     return (
         <div>
-            <div className="cart">
-                Cart
-            </div>
             <h1>Home Component</h1>
             <div className="cart-wrapper">
                 <div className="img-wrapper item">
@@ -15,7 +14,9 @@ const Home = () => {
                     <span>Price : 1000</span>
                 </div>
                 <div className="btn-wrapper item">
-                    <button>Add to Cart</button>
+                    <button onClick={()=>props.addToCardHandler({
+                        name: 'phone', price: 1000
+                    })}>Add to Cart</button>
                 </div>
             </div>
         </div>
