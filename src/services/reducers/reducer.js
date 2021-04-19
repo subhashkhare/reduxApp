@@ -7,10 +7,17 @@ const initialState = {
 export default function cartItem(state= [], action){
     switch (action.type) {
         case Const.ADD_TO_CART:
-            console.log('Reducer: ', action)
             return [ 
                 ...state,
                { cardData: action.data}
+            ]
+            
+            break;
+
+        case Const.REMOVE_FROM_CART:
+            state.pop()
+            return [ 
+                ...state
             ]
             
             break;

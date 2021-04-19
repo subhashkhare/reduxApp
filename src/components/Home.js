@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Home = props => {
-
-    console.log('Home: ', props.data.length)
     return (
         <div>
             <h1>Home Component</h1>
@@ -17,6 +15,9 @@ const Home = props => {
                     <button onClick={()=>props.addToCardHandler({
                         name: 'phone', price: 1000
                     })}>Add to Cart</button>
+                </div>
+                <div className="btn-wrapper item">
+                    <button onClick={()=>props.removeItemHandler()}>Delete</button>
                 </div>
             </div>
         </div>
